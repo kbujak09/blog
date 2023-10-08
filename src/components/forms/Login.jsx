@@ -13,7 +13,7 @@ const Login = ({ setUser }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch('https://blog-api-ten-eta.vercel.app/api/login', {
+      let res = await fetch('https://blog-api-woad.vercel.app/api/login', {
         method: "POST",
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'

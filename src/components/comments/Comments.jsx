@@ -18,7 +18,7 @@ const Comments = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await fetch(`https://blog-api-ten-eta.vercel.app/api/comments?postId=${postId}`, {
+      const response = await fetch(`https://blog-api-woad.vercel.app/api/comments?postId=${postId}`, {
         method: 'GET',
         headers: {
           Authorization: bearer,

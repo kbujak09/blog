@@ -15,7 +15,7 @@ const Posts = ({ category }) => {
 
   const fetchData = async () => {
     const data = await (
-      await fetch(`https://blog-api-ten-eta.vercel.app/api/posts`)).json()
+      await fetch(`https://blog-api-woad.vercel.app/api/posts`)).json()
     if (data) {
       return setData(data);
     }

@@ -1,8 +1,8 @@
 {
-  "homepage": "https://kbujak09.github.io/blog",
+  "homepage": ".",
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "https://blog-api-ten-eta.vercel.app/",
+  "proxy": "https://blog-api-woad.vercel.app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
