@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --main-font: 'Signika', sans-serif;
+  --dark-color: #202331;
+  --light-color: white;
+  --red-light: #EF233C;
+  --red-dark: #D90429;
+  --gray: #8D99AE;
+}
+html {
+  font-size: 10px;
+  font-family: var(--main-font);
+  color: var(--dark-color);
+}
+body {
+  margin: 0;
+  background-color: var(--light-color);
+}
+.content {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+button {
+  font-family: var(--main-font);
+  background-color: transparent;
+  border: 0;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

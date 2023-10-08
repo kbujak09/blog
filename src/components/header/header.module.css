@@ -1,0 +1,26 @@
+.header {
+  padding: 3.6rem 24vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--dark-color);
+}
+.title {
+  font-size: 3.6rem;
+  cursor: pointer;
+}
+.auth, .logged {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+  color: var(--dark-color);
+}
+.login, .register, .logout {
+  font-size: 1.8rem;
+  color: var(--dark-color);
+  cursor: pointer;
+}
+.username {
+  color: var(--red-light);
+}

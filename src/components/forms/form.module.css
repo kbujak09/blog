@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  color: var(--dark-color);
+  margin-top: 16vh;
+}
+.formTitle {
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: center;
+}
+.formGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  align-items: center;
+}
+.formGroup > label {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+}
+.formGroup > input {
+  font-size: 1.8rem;
+  padding: 0.4rem 0.8rem;
+}
+.formSubmit {
+  font-size: 2rem;
+  background-color: var(--red-light);
+  color: var(--light-color);
+  align-self: center;
+  padding: 0.4rem 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
