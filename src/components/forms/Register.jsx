@@ -13,7 +13,7 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch('https://blog-api-woad.vercel.app/api/register', {
+      let res = await fetch('http://51.20.31.180:5000/api/register', {
         method: "POST",
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'

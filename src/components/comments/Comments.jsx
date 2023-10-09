@@ -18,7 +18,7 @@ const Comments = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await fetch(`https://blog-api-woad.vercel.app/api/comments?postId=${postId}`, {
+      const response = await fetch(`http://51.20.31.180:5000/api/comments?postId=${postId}`, {
         method: 'GET',
         headers: {
           Authorization: bearer,
