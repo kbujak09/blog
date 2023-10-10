@@ -9,20 +9,32 @@ const formatDate = (date) => {
 
 const Posts = ({ category }) => {
 
-  const [ data, setData ] = useState(''); 
+  const [ data, setData ] = useState([]); 
   const navigate = useNavigate();
   const location = useLocation();
 
   const fetchData = async () => {
-    const data = await (
-      await fetch(`http://51.20.31.180:5000/api/posts`)).json()
-    if (data) {
-      return setData(data);
+    try {
+      const response = await fetch(`https://damp-shadow-8974.fly.dev/api/posts`);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch data. Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+  
+      if (data) {
+        await setData(data);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
-    return;
-  }
+  };
   useEffect(() => {
     fetchData()
+    return () => {
+      setData([]);
+    }
   }, [])
 
   const formatText = (text, length) => {
@@ -35,6 +47,9 @@ const Posts = ({ category }) => {
   }
 
   const filterData = (data) => {
+    if (!data) {
+      return false;
+    }
     return data.filter(item => !category || item.category.toLowerCase() === category.toLowerCase())
   }
 
@@ -49,16 +64,18 @@ const Posts = ({ category }) => {
 
   return (
     <div className={styles.container}>
-      {data !== '' && filterData(data).map(item => {
-        return (
-          <div onClick={handleClick} data-id={item._id} data-category={item.category} key={item._id} className={styles.miniature}>
-            <div className={styles.title}>{formatText(item.title, 80)}</div>
-            <div className={styles.text}>{formatText(item.text, 140)}</div>
-            <div className={styles.date}>{formatDate(item.date)}</div>
-          </div>
-          )
-      })}
-    </div>
+    { 
+    data && filterData(data).length > 0 ? filterData(data).map(item => {
+      return (
+        <div onClick={handleClick} data-id={item._id} data-category={item.category} key={item._id} className={styles.miniature}>
+          <div className={styles.title}>{formatText(item.title, 80)}</div>
+          <div className={styles.text}>{formatText(item.text, 140)}</div>
+          <div className={styles.date}>{formatDate(item.date)}</div>
+        </div>
+        )
+      }) : <div>pablo</div>
+    }
+  </div>
   )
 }
 

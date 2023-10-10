@@ -16,7 +16,7 @@ const Header = ({ user, setUser }) => {
       <div onClick={() => navigate('/')} className={styles.title}>BLOG</div>
       <div className={styles.auth}>
         {
-        localStorage.user === 'false'
+        !localStorage.user || localStorage.user === 'false'
           ? 
             <>
               <button onClick={() => navigate('/login')} className={styles.login}>Log in</button>

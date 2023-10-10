@@ -21,7 +21,7 @@ const Post = () => {
 
   const fetchPost = async () => {
     const data = await(
-      await fetch(`http://51.20.31.180:5000/api/posts/${postId}`)).json();
+      await fetch(`https://damp-shadow-8974.fly.dev/api/posts/${postId}`)).json();
     if (data) {
       if (data.likes.includes(localStorage.id)) {
         setIsLiked(true);
@@ -37,7 +37,7 @@ const Post = () => {
 
   const likePost = async (e) => {
     try {
-      const response = await fetch(`http://51.20.31.180:5000/api/posts/${postId}`, {
+      const response = await fetch(`https://damp-shadow-8974.fly.dev/api/posts/${postId}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',
@@ -57,7 +57,7 @@ const Post = () => {
     const token = localStorage.getItem("token");
     const bearer = `Bearer ${token}`;
     try {
-      const response = await fetch(`http://51.20.31.180:5000/api/posts/${postId}`, {
+      const response = await fetch(`https://damp-shadow-8974.fly.dev/api/posts/${postId}`, {
         method: 'DELETE',
         headers: {
           Accept: 'application/json',
@@ -89,14 +89,14 @@ const Post = () => {
         {
         isLiked &&
         <div className={styles.likes}>
-          <i onClick={unlikePost} className="material-symbols-outlined" style={{color: "var(--red-light)", cursor: "pointer"}}>favorite</i>
+          <img onClick={unlikePost} className={styles.icon} src={require('../../assets/heart filled.png')} alt="like_filled" />
           <div className={styles.likesCount}>{count}</div>
         </div>
         }
         {
         !isLiked && 
         <div className={styles.likes}>
-          <i onClick={likePost}  className="material-symbols-rounded" style={{color: "var(--red-light)", cursor: "pointer"}}>favorite</i> 
+          <img onClick={likePost} className={styles.icon} src={require('../../assets/heart.png')} alt="like_empty" />
           <div className={styles.likesCount}>{count}</div>
         </div>
         }

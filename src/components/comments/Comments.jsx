@@ -18,7 +18,7 @@ const Comments = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await fetch(`http://51.20.31.180:5000/api/comments?postId=${postId}`, {
+      const response = await fetch(`https://damp-shadow-8974.fly.dev/api/comments?postId=${postId}`, {
         method: 'GET',
         headers: {
           Authorization: bearer,
@@ -58,7 +58,7 @@ const Comments = () => {
       return;
     }
     try {
-      const response = await fetch('https://blog-api-ten-eta.vercel.app/api/comments', {
+      const response = await fetch('https://damp-shadow-8974.fly.dev/api/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',

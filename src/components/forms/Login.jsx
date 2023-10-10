@@ -13,7 +13,7 @@ const Login = ({ setUser }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch('http://51.20.31.180:5000/api/login', {
+      let res = await fetch('https://damp-shadow-8974.fly.dev/api/login', {
         method: "POST",
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
