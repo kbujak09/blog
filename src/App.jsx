@@ -7,7 +7,6 @@ import { useState } from 'react';
 import Posts from './components/posts/Posts';
 import Categories from './components/categories/Categories';
 import Post from './components/post_item/Post';
-import Comments from './components/comments/Comments';
 
 function App() {
   

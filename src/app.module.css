@@ -17,6 +17,7 @@ html {
 body {
   margin: 0;
   background-color: var(--light-color);
+  overflow-x: hidden;
 }
 .content {
   display: flex;

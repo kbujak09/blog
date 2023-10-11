@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
         navigate('/');
       }
       else {
-        setMessage('Some error occurred');
+        setMessage('Invalid username or password.');
       }
     }
     catch (err) {
@@ -56,7 +56,7 @@ const Login = ({ setUser }) => {
         <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" required/>
       </div>
       <button className={styles.formSubmit} type='submit'>Log in</button>
-      {message ? <div>{message}</div> : null}
+      {message ? <div className={styles.formErrors}>{message}</div> : null}
     </form>
   )
 }

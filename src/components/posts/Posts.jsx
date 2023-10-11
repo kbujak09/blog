@@ -62,22 +62,32 @@ const Posts = ({ category }) => {
     }
   }
 
+//   return (
+//     data && filterData(data).length > 0 ?
+//       <div className={styles.container}> 
+//       {filterData(data).map(item => {
+//       return (
+//           })
+//         </div>
+//          }) : 
+//   )
+// }
+
   return (
+    data && filterData(data).length > 0 ?
     <div className={styles.container}>
-    { 
-    data && filterData(data).length > 0 ? filterData(data).map(item => {
-      return (
-        <div onClick={handleClick} data-id={item._id} data-category={item.category} key={item._id} className={styles.miniature}>
-          <div className={styles.title}>{formatText(item.title, 80)}</div>
-          <div className={styles.text}>{formatText(item.text, 140)}</div>
-          <div className={styles.date}>{formatDate(item.date)}</div>
-        </div>
+      {filterData(data).map(item => {
+        return (
+          <div onClick={handleClick} data-id={item._id} data-category={item.category} key={item._id} className={styles.miniature}>
+            <div className={styles.title}>{formatText(item.title, 80)}</div>
+            <div className={styles.text}>{formatText(item.text, 140)}</div>
+            <div className={styles.date}>{formatDate(item.date)}</div>
+          </div>
         )
-      }) : <div>pablo</div>
-    }
-  </div>
+      })}
+    </div>
+    : <div className={styles.noPosts}>There's no posts :(</div>
   )
 }
-
 export { formatDate };
 export default Posts;

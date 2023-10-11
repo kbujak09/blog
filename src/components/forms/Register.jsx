@@ -8,7 +8,7 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState([]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +32,8 @@ const Register = () => {
         navigate('/login');
       }
       else {
-        setMessage('Some error occurred');
+        const data = await res.json();
+        setMessage(data.errors)
       }
     }
     catch (err) {
@@ -56,7 +57,7 @@ const Register = () => {
         <input value={confirm} onChange={(e) => setConfirm(e.target.value)} type="password" name="confirmPassword"/>
       </div>
       <button className={styles.formSubmit} type='submit'>Sign Up</button>
-      {message ? <div>{message}</div> : null}
+      {message ? <div className={styles.formErrors}>{message.map(err => <div>{err.msg}</div>)}</div> : null}
     </form>
   )
 }

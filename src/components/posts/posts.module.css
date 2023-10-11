@@ -3,6 +3,7 @@
   padding: 2rem 20vw;
   grid-template-columns: repeat(4, 300px);
   gap: 1rem;
+  align-content: baseline;
 }
 .miniature {
   border: 1px solid var(--dark-color);
@@ -32,4 +33,9 @@
 }
 .date {
   font-size: 1.6rem;
+}
+.noPosts {
+  display: flex;
+  margin-top: 32vh;
+  font-size: 2.4rem;
 }
