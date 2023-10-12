@@ -1,8 +1,9 @@
 import styles from './header.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = ({ user, setUser }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const logOut = () => {
     localStorage.clear();
