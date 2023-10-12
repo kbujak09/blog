@@ -15,7 +15,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Header user={user} setUser={setUser}/>
-      <Categories />
+      <Categories/>
       <main className={styles.content}>
         <Routes>
           <Route path='/' element={<Posts/>}/>
